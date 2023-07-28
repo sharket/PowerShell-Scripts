@@ -18,7 +18,6 @@ Try {
     Add-PrinterPort -Name $NewPrinterPortName -PrinterHostAddress $NewPrinterHostAddress -ErrorAction Stop
     Set-Printer -Name $PrinterName -PortName $NewPrinterPortName -ErrorAction Stop
     Write-Output "Printer config changed succesfully. New port name: $NewPrinterPortName with address: $NewPrinterHostAddress"
-    Pause
     Exit 0
 }
 Catch {
