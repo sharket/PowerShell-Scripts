@@ -1,7 +1,7 @@
 <#
     .DESCRIPTION
     Remove registry value from keys in HKCU:\SOFTWARE\Policies, which is usually restricted for editing as it should be managed by GPOs or CSPs instead.
-    NOTE: Requires administrative permisions and active target user session
+    NOTE: Requires administrative permissions and active target user session
 
     .NOTES
     Version:                1.0
