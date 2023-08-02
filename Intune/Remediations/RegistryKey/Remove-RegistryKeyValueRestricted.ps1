@@ -19,10 +19,10 @@ $userSID = (New-Object -ComObject Microsoft.DiskQuota).TranslateLogonNameToSID((
 $RegistryPath = "HKU:\$userSID\SOFTWARE\Policies\Microsoft\WindowsStore"
 $Name         = "RequirePrivateStoreOnly"
 
-# Remove registry key
-If (Test-Path $RegistryPath) {
+# Remove registry key if it exists
+If (Get-ItemProperty -Path $RegistryPath -Name $Name -ErrorAction SilentlyContinue) {
     Try {
-        Remove-ItemProperty -Path $RegistryPath -Name $Name -Force | Out-Null
+        Remove-ItemProperty -Path $RegistryPath -Name $Name -Force -ErrorAction Stop | Out-Null
         Write-Output "SUCCESS: $Name in $RegistryPath has been removed."
     }
     Catch {
