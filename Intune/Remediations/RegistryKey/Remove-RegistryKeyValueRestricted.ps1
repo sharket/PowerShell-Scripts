@@ -4,10 +4,10 @@
     NOTE: Requires administrative permissions and active target user session
 
     .NOTES
-    Version:                1.0
+    Version:                1.1
     Author:                 https://github.com/sharket
     Created:                28/07/2023
-    Last Updated:           N/A
+    Last Updated:           02/08/2023
 #>
 
 New-PSDrive HKU -PSProvider Registry -Root HKEY_USERS | Out-Null
@@ -30,5 +30,5 @@ If (Test-Path $RegistryPath) {
     }
 }
 Else {
-    Write-Ouput "SKIPPED: Registry item $Name in $RegistryPath NOT found."
+    Write-Output "SKIPPED: Registry item $Name in $RegistryPath NOT found."
 }
