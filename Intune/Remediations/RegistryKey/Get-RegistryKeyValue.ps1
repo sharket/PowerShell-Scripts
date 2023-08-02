@@ -14,17 +14,21 @@ $RegistryPath = 'HKCU:\Control Panel\Keyboard'
 $Name         = 'InitialKeyboardIndicators'
 $Value        = '2'
 
-# Check if the key exist
-If (-Not (Test-Path $RegistryPath)) {
-    Write-Output "Registry key $Name in $RegistryPath doesn't exist."
-    Exit 1
+# Check if the key and value exist
+Try {
+    $currentValue = Get-ItemProperty -Path $RegistryPath -Name $Name -ErrorAction Stop
 }
-# Check if the key is set to expected value
-Elseif ((Get-ItemProperty -Path $RegistryPath -Name $Name).$Name -eq $Value) {
-    Write-Output "Registry key is set to correct value: $Value"
+Catch {
+    Write-Output "Registry item $Name in $RegistryPath doesn't exist."
     Exit 0
 }
-Else {
-    Write-Output "Registry key is not set to $Value."
+
+# Check if the key is set to expected value
+If (($currentValue).$Name -eq $Value) {
+    Write-Output "Registry item is set to target value: $Value"
     Exit 1
+}
+Else {
+    Write-Output "Registry item is NOT set to $Value."
+    Exit 0
 }
