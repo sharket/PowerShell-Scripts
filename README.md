@@ -17,3 +17,11 @@ This is a collection of PowerShell scripts for various Microsoft services. Born 
 | [LocalAdminAccount](https://github.com/sharket/PowerShell-Scripts/tree/main/Intune/Remediations/LocalAdminAccount) | Enables built-in administrator account based on SID |
 | [PrinterPortAddress](https://github.com/sharket/PowerShell-Scripts/tree/main/Intune/Remediations/PrinterPortAddress) | Changes printer port address - IP or hostname |
 | [RegistryKey](https://github.com/sharket/PowerShell-Scripts/tree/main/Intune/Remediations/RegistryKey) | Changes or removes registry key value |
+
+## Localhost scripts:
+Intended to run locally on endpoints.
+
+| Script      | Description |
+| ----------- | ----------- |
+| [Run-ExeFromUserSpaceAsSystem.ps1](https://github.com/sharket/PowerShell-Scripts/tree/main/Localhost/Run-ExeFromUserSpaceAsSystem) | Runs an executable in user space (i.e. AppData) invoked from system context |
+
