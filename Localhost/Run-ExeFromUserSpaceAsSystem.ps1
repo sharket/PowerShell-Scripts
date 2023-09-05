@@ -54,7 +54,7 @@ function Write-LogEntry {
 $user = (Get-WmiObject -Class Win32_ComputerSystem).Username
 $user = ($user -split "\\")[1]
 
-$exeFullPath = "C:\Users\" + $user + "\AppData\Local\MicroSIP\Uninstall.exe"
+$exeFullPath = "C:\Users\" + $user + $Exe
 
 Write-LogEntry -Message "#############################"
 Write-LogEntry -Message "Architecture is $Env:PROCESSOR_ARCHITECTURE"
