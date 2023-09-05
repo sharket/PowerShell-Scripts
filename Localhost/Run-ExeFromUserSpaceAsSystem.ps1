@@ -4,7 +4,7 @@
     DISCLAIMER: Since files in user space can be easily modified / replaced, invoking them with system level permissions is generally a bad idea.
 
     .PARAMETER Exe
-    Uninstall exe location within user space, excluding C:\Users\$USERNAME$
+    Path for the executable within user space, excluding C:\Users\$USERNAME%. EXAMPLE: "\AppData\Local\MicroSIP\Uninstall.exe"
 
     .PARAMETER Args
     Arguments to be passed. Use single quotes for strings inside.
